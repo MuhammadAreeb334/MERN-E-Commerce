@@ -14,7 +14,7 @@
 
 .nav-logo p {
   color: #171717;
-  font-size: 2.375rem; /* 38px */
+  font-size: 2rem; /* 38px */
   font-weight: 600;
   margin: 0;
 }
@@ -25,7 +25,7 @@
   gap: 3.125rem; /* 50px */
   list-style: none;
   color: #626262;
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 500;
   margin: 0;
   padding: 0;
@@ -71,7 +71,7 @@
   border-radius: 75px;
   background-color: #fff;
   color: #515151;
-  font-size: 1.25rem; /* 20px */
+  font-size: 1rem; /* 20px */
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease;

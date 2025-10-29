@@ -1,0 +1,154 @@
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  width: 100%;
+  background: linear-gradient(135deg, #fde1ff 0%, #e1ffea 100%);
+  padding: 3rem 1.5rem;
+  box-sizing: border-box;
+}
+
+.hero__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.hero__text {
+  flex: 1 1 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.hero__subtitle {
+  color: #090909;
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.hero__headline {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.hero__headline p {
+  color: #171717;
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.hero__hand {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.hero__hand img {
+  width: 70px;
+  height: auto;
+}
+
+.hero__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: #ff4141;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 0.9rem 2rem;
+  margin-top: 2rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(255, 65, 65, 0.3);
+  transition: all 0.3s ease;
+}
+
+.hero__cta:hover {
+  background: #ff5c5c;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(255, 65, 65, 0.4);
+}
+
+.hero__image {
+  flex: 1 1 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero__image img {
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.4s ease;
+}
+
+.hero__image img:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 1024px) {
+  .hero__headline p {
+    font-size: 3.2rem;
+  }
+
+  .hero__hand img {
+    width: 60px;
+  }
+
+  .hero__cta {
+    font-size: 1rem;
+    padding: 0.8rem 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero__content {
+    flex-direction: column;
+    text-align: center;
+    gap: 2.5rem;
+  }
+
+  .hero__headline p {
+    font-size: 2.4rem;
+  }
+
+  .hero__cta {
+    margin: 1.5rem auto 0;
+  }
+
+  .hero__image img {
+    max-width: 340px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero__headline p {
+    font-size: 2rem;
+  }
+
+  .hero__hand img {
+    width: 45px;
+  }
+
+  .hero__cta {
+    font-size: 0.95rem;
+    padding: 0.7rem 1.6rem;
+  }
+}
