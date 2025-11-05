@@ -1,0 +1,36 @@
+.bread-crums {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #777;
+  font-family: "Poppins", sans-serif;
+  padding: 20px 80px;
+  text-transform: uppercase;
+}
+
+.bread-crums svg {
+  font-size: 12px;
+  color: #999;
+}
+
+.bread-crums span,
+.bread-crums a {
+  color: #777;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.bread-crums span:hover,
+.bread-crums a:hover {
+  color: #e60023; 
+}
+
+@media (max-width: 768px) {
+  .bread-crums {
+    padding: 15px 30px;
+    font-size: 12px;
+    flex-wrap: wrap;
+  }
+}
