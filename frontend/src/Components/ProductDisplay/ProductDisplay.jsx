@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./ProductDisplay.css";
 import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
+import { ShopContext } from "../../Context/ShopContext";
 
 const ProductDisplay = ({ product }) => {
+  const { addToCart } = useContext(ShopContext);
   return (
     <div className="product-display">
       <div className="product-display-left">
@@ -54,10 +56,18 @@ const ProductDisplay = ({ product }) => {
           </div>
         </div>
 
-        <button className="add-to-cart-btn">ADD TO CART</button>
+        <button
+          onClick={() => {
+            addToCart(product.id);
+          }}
+          className="add-to-cart-btn"
+        >
+          ADD TO CART
+        </button>
 
         <p className="product-display-right-category">
-          <span>Category:</span> {product.category || "Women, T-Shirt, Crop Top"}
+          <span>Category:</span>{" "}
+          {product.category || "Women, T-Shirt, Crop Top"}
         </p>
         <p className="product-display-right-category">
           <span>Tags:</span> Modern, Latest
