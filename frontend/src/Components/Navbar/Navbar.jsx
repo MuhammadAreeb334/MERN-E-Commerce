@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./Navbar.css";
 import logo from "../../assets/logo.png";
 import { FaShoppingCart } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { ShopContext } from "../../Context/ShopContext";
 
 const Navbar = () => {
   const [activeMenu, setActiveMenu] = useState("shop");
@@ -13,6 +14,8 @@ const Navbar = () => {
     { label: "Women", key: "womens", path: "/womens" },
     { label: "Kids", key: "kids", path: "/kids" },
   ];
+
+  const { getTotalCartItems } = useContext(ShopContext);
 
   return (
     <nav className="navbar">
@@ -44,7 +47,7 @@ const Navbar = () => {
           <Link to="/cart" className="nav-links">
             <FaShoppingCart size={28} color="#515151" />
           </Link>
-          <span className="nav-cart-count">0</span>
+          <span className="nav-cart-count">{getTotalCartItems()}</span>
         </div>
       </div>
     </nav>
