@@ -1,12 +1,13 @@
 import React, { useContext, useState } from "react";
 import "./Navbar.css";
 import logo from "../../assets/logo.png";
-import { FaShoppingCart } from "react-icons/fa";
+import { FaShoppingCart, FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { ShopContext } from "../../Context/ShopContext";
 
 const Navbar = () => {
   const [activeMenu, setActiveMenu] = useState("shop");
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const menuItems = [
     { label: "Shop", key: "shop", path: "/" },
@@ -24,12 +25,24 @@ const Navbar = () => {
         <p>SHOPPER</p>
       </div>
 
-      <ul className="nav-menu">
+      <div
+        className="mobile-menu-icon"
+        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+      >
+        {isMobileMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+      </div>
+
+      <ul
+        className={`nav-menu ${isMobileMenuOpen ? "mobile-menu-active" : ""}`}
+      >
         {menuItems.map(({ label, key, path }) => (
           <li
             key={key}
             className={activeMenu === key ? "active" : ""}
-            onClick={() => setActiveMenu(key)}
+            onClick={() => {
+              setActiveMenu(key);
+              setIsMobileMenuOpen(false);
+            }}
           >
             <Link to={path} className="nav-links">
               {label}
