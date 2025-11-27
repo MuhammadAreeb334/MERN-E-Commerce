@@ -7,6 +7,13 @@
   font-family: "Poppins", sans-serif;
   padding: 20px 80px;
   text-transform: uppercase;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.bread-crums::-webkit-scrollbar {
+  display: none;
 }
 
 .bread-crums svg {
@@ -24,13 +31,39 @@
 
 .bread-crums span:hover,
 .bread-crums a:hover {
-  color: #e60023; 
+  color: #e60023;
 }
 
 @media (max-width: 768px) {
   .bread-crums {
     padding: 15px 30px;
-    font-size: 12px;
+    font-size: 13px;
+    gap: 6px;
     flex-wrap: wrap;
+    white-space: normal;
+  }
+
+  .bread-crums svg {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bread-crums {
+    padding: 12px 16px;
+    font-size: 12px;
+    gap: 4px;
+    flex-wrap: wrap;
+    white-space: normal;
+    justify-content: flex-start;
+  }
+
+  .bread-crums span,
+  .bread-crums a {
+    font-size: 12px;
+  }
+
+  .bread-crums svg {
+    font-size: 10px;
   }
 }

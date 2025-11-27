@@ -41,16 +41,25 @@
 }
 
 @media (max-width: 768px) {
-  .relatedproducts {
-    width: 90%;
-    margin: 50px auto;
-  }
-
   .relatedproducts h1 {
-    font-size: 22px;
+    font-size: 2rem;
   }
 
   .relatedproducts-items {
-    gap: 20px;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .relatedproducts {
+    padding: 3rem 1rem;
+  }
+
+  .relatedproducts h1 {
+    font-size: 1.6rem;
+  }
+
+  .relatedproducts hr {
+    width: 60px;
   }
 }
