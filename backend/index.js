@@ -1,4 +1,3 @@
-const PORT = 4000;
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
@@ -9,11 +8,12 @@ const cors = require("cors");
 
 app.use(express.json());
 app.use(cors());
+require("dotenv").config();
 
 //Database connection with mongoose
-mongoose.connect(
-  "mongodb+srv://MERN-ECommerce:9XB66JZmX3cvyhkz@cluster0.hvh5wiv.mongodb.net/MERN-ECommerce"
-);
+const PORT = process.env.PORT || 4000;
+
+mongoose.connect(process.env.MONGO_URI);
 
 //API Creation
 
@@ -42,7 +42,7 @@ app.use("/images", express.static("upload/images"));
 app.post("/upload", upload.single("product"), (req, res) => {
   res.json({
     success: 1,
-    image_url: `http://localhost:${PORT}/images/${req.file.filename}`,
+    image_url: `${process.env.BASE_URL}/images/${req.file.filename}`,
   });
 });
 
